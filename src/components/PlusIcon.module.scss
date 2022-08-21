@@ -1,0 +1,38 @@
+.plus-icon {
+  --size: 300px;
+  --line-width: 10px;
+  --line-length: 80px;
+
+  width: var(--size);
+  height: var(--size);
+  // margin: 0 auto;
+  // height: ${size}px;
+  position: relative;
+  // background-color: #eee;
+
+  &::before {
+    content: "";
+    display: block;
+    height: var(--line-width);
+    width: var(--line-length);
+    position: absolute;
+    left: calc((var(--size) - var(--line-length)) / 2);
+    top: calc((var(--size) - var(--line-width)) / 2);
+    //   left: ${size / 2 - lineLength / 2}px;
+    //   top: ${size / 2 - lineWidth / 2}px;
+    background-color: #ddd;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: var(--line-length);
+    width: var(--line-width);
+    position: absolute;
+    //   left: ${size / 2 - lineWidth / 2}px;
+    //   top: ${size / 2 - lineLength / 2}px;
+    left: calc((var(--size) - var(--line-width)) / 2);
+    top: calc((var(--size) - var(--line-length)) / 2);
+    background-color: #ddd;
+  }
+}

@@ -1,0 +1,29 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(black, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  max-width: 100%;
+  max-height: 80%;
+
+  width: 80%;
+  background-color: white;
+  padding: 1em;
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em 1em;
+  }
+
+  .content {
+    margin: 1em;
+  }
+}

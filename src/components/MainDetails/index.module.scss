@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: clamp(15em, 30%, 30em) 1fr;
+  margin: 1em;
+
+  width: 90%;
+
+  .row {
+    display: flex;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+}
