@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "../Modal";
 import AddItem from "./AddItem";
 import Item from "./Item";
+import { Accepts, Media } from "./media";
 import styles from "./index.module.scss";
 
 interface MediaFinderProps {

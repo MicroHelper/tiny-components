@@ -6,8 +6,8 @@ const crossmarkUnicode = "\u2715";
 
 export interface ModalProps {
   isOpen: boolean;
-  onClose: () => void;
   children: ReactNode;
+  onClose?: () => void;
   containerId?: string;
 }
 
@@ -32,16 +32,18 @@ const Modal = ({ isOpen, onClose, children, containerId }: ModalProps) => {
   return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <div
-          className={styles["btn-close"]}
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose();
-          }}
-        >
-          {crossmarkUnicode}
-        </div>
-        <div className={styles.content}>{children}</div>
+        {onClose && (
+          <div
+            className={styles["btn-close"]}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+          >
+            {crossmarkUnicode}
+          </div>
+        )}
+        {children}
       </div>
     </div>,
     containerEl

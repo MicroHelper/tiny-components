@@ -1,29 +1,50 @@
+$btn-size: 1.8em;
+
 .overlay {
+  z-index: 999999;
   position: fixed;
   inset: 0;
-  background-color: rgba(black, 0.5);
+  background-color: rgba(black, 0.68);
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.modal {
-  position: relative;
-  max-width: 100%;
-  max-height: 80%;
+  .modal {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
 
-  width: 80%;
-  background-color: white;
-  padding: 1em;
+    .btn-close {
+      position: absolute;
+      top: -$btn-size;
+      right: -$btn-size;
+      width: $btn-size;
+      height: $btn-size;
+      font-size: 1.2rem;
 
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5em 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      cursor: pointer;
+
+      color: white;
+      background-color: black;
+      transition: all 200ms ease-in;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
-  .content {
-    margin: 1em;
+  &:hover {
+    .modal:not(:hover) {
+      .btn-close {
+        opacity: 1;
+      }
+    }
   }
 }

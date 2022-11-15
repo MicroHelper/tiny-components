@@ -1,5 +1,6 @@
 import React, { useId } from "react";
 import PlusIcon from "../PlusIcon";
+import { Accepts } from "./media";
 import styles from "./Item.module.scss";
 
 interface Props {
