@@ -5,7 +5,7 @@ import Item from "./Item";
 import { Accepts, Media } from "./media";
 import styles from "./index.module.scss";
 
-interface MediaFinderProps {
+export interface MediaFinderProps {
   items: Array<Media>;
   getImageUrl: (fileName: string) => string;
   onSelect: (ids: Array<string | number>) => void;
@@ -30,7 +30,7 @@ const MediaFinder = ({
     <Modal isOpen={true} onClose={onClose}>
       <div className={styles.modal}>
         <div className={styles.header}>
-          <h5>媒体库</h5>
+          <div className={styles.caption}>媒体库</div>
           <div>
             <button
               className={styles["btn-default"]}

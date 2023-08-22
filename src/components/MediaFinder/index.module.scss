@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $btn-bg-color: #e8e8e9;
 $btn-bg-primary: #3498db;
 
@@ -6,11 +8,23 @@ $btn-bg-primary: #3498db;
   flex-direction: column;
   gap: 1em;
   max-height: 60vh;
+  max-width: 100%;
+  min-width: 402px;
+
+  box-sizing: border-box;
+  background-color: white;
+  padding: 1em;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  .caption {
+    font-size: 1.05em;
+    font-weight: 500;
+  }
 }
 
 .main {
@@ -58,5 +72,11 @@ $btn-bg-primary: #3498db;
   }
   &:active {
     background-color: darken($btn-bg-primary, 20);
+  }
+}
+
+@media screen and (max-width: math.div(402px, 0.8)) {
+  .modal {
+    min-width: unset;
   }
 }

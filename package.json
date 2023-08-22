@@ -1,5 +1,5 @@
 {
-    "version": "0.2.0",
+    "version": "0.3.1",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -11,7 +11,10 @@
     },
     "scripts": {
         "start": "rollup -c -w",
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
         "build": "rollup -c",
+        "pub": "npm run build && npm publish",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },
@@ -29,8 +32,8 @@
         "clsx": "^1.2.1"
     },
     "peerDependencies": {
-        "react": ">=18",
-        "react-dom": ">=18"
+        "react": ">=16",
+        "react-dom": ">=16"
     },
     "devDependencies": {
         "@babel/core": "^7.18.9",
@@ -54,7 +57,11 @@
         "babel-loader": "^8.2.5",
         "css-loader": "^6.7.1",
         "husky": "^8.0.1",
+        "nanoid": "^4.0.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-is": "^18.2.0",
+        "rimraf": "^5.0.1",
         "rollup-plugin-delete": "^2.0.0",
         "rollup-plugin-dts": "^4.2.2",
         "rollup-plugin-node-externals": "^4.1.1",
